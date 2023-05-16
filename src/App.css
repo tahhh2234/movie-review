@@ -1,0 +1,29 @@
+.app-header {
+  border-bottom: 2px solid black;
+  height: 70px;
+  display: flex; /*ตรงกลาง*/
+  justify-content: center;
+  align-items: center;
+  font-family: "Fascinate";
+  font-size: 55px;
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 16px;
+  row-gap: 16px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+}
+
+.app-header-logo {
+  height: 44px;
+}
+
+.movie-item img {
+  display: block;
+  width: 100%;
+}
