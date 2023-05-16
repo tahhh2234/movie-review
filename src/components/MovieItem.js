@@ -1,4 +1,6 @@
-function TattooItem() {
+import "./MovieItem.css";
+
+function MovieItem() {
   return (
     <div className="movie-item">
       <img src="/pics/ligy.jpg" />
@@ -7,4 +9,4 @@ function TattooItem() {
   );
 }
 
-export default TattooItem;
+export default MovieItem;
