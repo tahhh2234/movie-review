@@ -1,12 +1,13 @@
 import "./MoviePost.css";
 
-function MoviePost() {
+function MoviePost(props) {
+  const { movie } = props;
   return (
     <div className="movie-post">
       <div className="movie-post-bg"></div>
       <div className="movie-post-content">
-        <img src="/pics/ligy.jpg" />
-        <h4>Lightyear</h4>
+        <img src={movie.thumbnail} />
+        <h4>{movie.title}</h4>
       </div>
     </div>
   );

@@ -18,3 +18,22 @@
   right: 0;
   left: 0;
 }
+
+.movie-post-content {
+  position: relative;
+  max-width: 1200px;
+  background-color: black;
+}
+
+.movie-post-content img {
+  display: block;
+  max-width: 400px;
+  max-height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.movie-post-content h4 {
+  color: white;
+  text-align: center;
+}
