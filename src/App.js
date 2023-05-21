@@ -4,9 +4,11 @@ import "./App.css";
 import AppHeader from "./components/AppHeader";
 import MovieItem from "./components/MovieItem";
 import MoviePost from "./components/MoviePost";
+import AppSearch from "./components/AppSearch";
 
 function App() {
   const [selectedMovie, setSelectedMovie] = useState(null);
+  const [searchText, setSearchText] = useState("");
 
   function onMovieOpenClick(choosen) {
     setSelectedMovie(choosen);
@@ -16,11 +18,15 @@ function App() {
     setSelectedMovie(null);
   }
 
-  const movieElements = movies.map((movie, index) => {
-    return (
-      <MovieItem key={index} movie={movie} onMovieClick={onMovieOpenClick} />
-    );
-  });
+  const movieElements = movies
+    .filter((movie) => {
+      return movie.title.includes(searchText);
+    })
+    .map((movie, index) => {
+      return (
+        <MovieItem key={index} movie={movie} onMovieClick={onMovieOpenClick} />
+      );
+    });
 
   let moviePost = null;
   if (!!selectedMovie) {
@@ -32,7 +38,12 @@ function App() {
   return (
     <div className="app">
       <AppHeader />
-      <div className="app-grid">{movieElements}</div>
+      <section className="app-section">
+        <div className="app-container">
+          <AppSearch value={searchText} onValueChange={setSearchText} />
+          <div className="app-grid">{movieElements}</div>
+        </div>
+      </section>
       {moviePost}
     </div>
   );
